@@ -2,8 +2,8 @@ let boxes = document.querySelectorAll(".box");
 let resetbtn = document.querySelector("#reset-btn");
 let newgamebtn = document.querySelector("#new-btn");
 let msg = document.querySelector("#msg");
-let drawmsg = document.querySelector("#drawmsg");
 let msgcontainer = document.querySelector(".msg-container");
+
 let turnO = true; // player X , player O  --> game starts with a player O where ,O is printed on box
 let count = 0; //To Track Draw
 // 2d aaray: for storing winning patterns
@@ -44,7 +44,7 @@ boxes.forEach((box)=>{
        if (count === 9 && !isWinner) {
          gameDraw();
        }
-    })
+    });
 });
 
 const gameDraw = () => {
@@ -76,8 +76,8 @@ const checkWinner = () => {
         
     if (pos1val != "" && pos2val != "", pos3val != ""){
         if (pos1val === pos2val && pos2val === pos3val){
-            console.log("winner" , pos1val);
-            showWinner (pos1val); // 
+            showWinner (pos1val);
+            return true;
         }
     }
           
